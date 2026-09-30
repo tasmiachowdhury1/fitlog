@@ -1,5 +1,6 @@
 import HeroSection from "./Hero";
 import LibrarySec from "./LibrarySection";
+import Navbar from "./Navbar";
 
 
 export default function Home() {
