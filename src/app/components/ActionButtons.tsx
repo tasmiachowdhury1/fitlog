@@ -1,19 +1,22 @@
 "use client"
 import { useWorkout } from "@/app/context/PlanContext"
 import { Workout } from "@/app/types/index"
+import toast from "react-hot-toast"
 import Link from "next/link"
 
-type ActionButtonsProps = {
+type WorkoutConnectProps = {
     workout: Workout
 }
-const ActionButtons = ({ workout }: ActionButtonsProps) => {
+const WorkoutConnect = ({ workout }: WorkoutConnectProps) => {
     const { addToPlan, saveWorkout } = useWorkout()
 
     const addWorkout = () => {
         addToPlan(workout)
+        toast.success(`${workout.name} added to today's plan!`)
     }
     const saveWorkoutItems = () => {
         saveWorkout(workout)
+        toast.success(`${workout.name} has saved for later!`)
     }
 
     return (
@@ -23,7 +26,8 @@ const ActionButtons = ({ workout }: ActionButtonsProps) => {
 
             <button
                 onClick={addWorkout}
-                className="mt-5 rounded-xl cursor-pointer bg-(--primary-dark) px-6 py-3 font-semibold  text-white hover:bg-(--primary)"
+                className="mt-5 rounded-xl cursor-pointer bg-(--primary-dark) px-6 py-3 font-semibold  text-white hover:bg-(--primary)
+                "
             >
                 ＋ Add to today's plan
             </button>
@@ -44,4 +48,4 @@ const ActionButtons = ({ workout }: ActionButtonsProps) => {
     )
 }
 
-export default ActionButtons
+export default WorkoutConnect

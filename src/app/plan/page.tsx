@@ -3,6 +3,7 @@ import React from 'react'
 import { useWorkout } from '../context/PlanContext'
 import Link from 'next/link'
 import { useState } from 'react'
+import toast from "react-hot-toast"
 
 const planPage = () => {
     const { plan, saved, removeFromPlan, removeFromSaveWorkout } = useWorkout()
@@ -223,7 +224,7 @@ const planPage = () => {
 
                                                 onClick={() => {
                                                     removeFromPlan(workout.id)
-
+                                                    toast.success(`${workout.name} marked as done!`)
                                                 }}
                                                 className="cursor-pointer rounded-full bg-(--primary-dark) px-5 py-2 text-[15px] font-semibold text-white hover:bg-(--primary)"
                                             >
@@ -238,7 +239,7 @@ const planPage = () => {
                                                 <button
                                                     onClick={() => {
                                                         removeFromSaveWorkout(workout.id)
-
+                                                        toast.success(`${workout.name} removed from saved!`)
                                                     }}
                                                     className="cursor-pointer px-2 text-xl font-bold text-(--muted) hover:text-(--primary-dark)"
 
