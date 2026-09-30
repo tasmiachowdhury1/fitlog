@@ -3,6 +3,7 @@ import { Oswald } from "next/font/google"
 import "./globals.css"
 import Navbar from "./components/Navbar"
 import { WorkoutProvider } from "./context/PlanContext"
+import Footer from "./components/Footer"
 
 
 
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Navbar />
           {children}
         </WorkoutProvider>
+        <Footer />
       </body>
 
     </html>
