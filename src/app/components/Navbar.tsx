@@ -15,7 +15,7 @@ const Navbar = () => {
 
         <header className=' border-b border-(--border) bg-(--primary)'>
             <nav className='container mx-auto relative flex max-w-7xl items-center justify-between px-2 py-4 sm:px-6 lg:px-8'>
-                <Link href="/components" className='flex items-center gap-2'>
+                <Link href="page.tsx" className='flex items-center gap-2'>
                     <Image src="/logo.png" alt='Fit Log' width={20}
                         height={20}
                         className='h-6 w-6'
@@ -25,7 +25,7 @@ const Navbar = () => {
 
                 <div className="absolute left-1/2 -translate-x-1/2 items-center hidden gap-2 lg:flex">
 
-                    <Link href="/components" className={`rounded-full px-4 py-1 text-[15px] font-medium ${pathname === "/components" ? "bg-(--page-btn) text-(--primary-dark)" : "text-(--primary-dark)"}`} >Workouts</Link>
+                    <Link href="/" className={`rounded-full px-4 py-1 text-[15px] font-medium ${pathname === "/" ? "bg-(--page-btn) text-(--primary-dark)" : "text-(--primary-dark)"}`} >Workouts</Link>
                     <Link href="/plan" className={`rounded-full px-4 py-1 text-[15px] font-medium ${pathname === "/plan" ? "bg-(--page-btn) text-(--primary-dark)" : "text-(--primary-dark)"}`} >My plan</Link>
 
                 </div>
@@ -47,8 +47,8 @@ const Navbar = () => {
                 menuOpen && (
                     <div className='border-t border-[#272b33] px-4 py-4 lg:hidden'>
                         <div className="mx-auto flex max-w-7xl flex-col gap-2">
-                            <Link href="/components"
-                                onClick={() => setMenuOpen(false)} className={`rounded-full px-4 py-1 text-[15px] font-medium ${pathname === "/components" ? "bg-(--page-btn) text-(--primary-dark)" : "text-(--primary-dark)"}`}>Workouts</Link>
+                            <Link href="/"
+                                onClick={() => setMenuOpen(false)} className={`rounded-full px-4 py-1 text-[15px] font-medium ${pathname === "/" ? "bg-(--page-btn) text-(--primary-dark)" : "text-(--primary-dark)"}`}>Workouts</Link>
 
                             <Link href="/plan"
                                 onClick={() => setMenuOpen(false)}
